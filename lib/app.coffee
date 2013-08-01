@@ -36,6 +36,10 @@ app.get '/', (req, res)->
 server = http.createServer app
 io = require('socket.io').listen(server)
 
+io.configure ->
+  io.set "transports", ["xhr-polling"]
+  io.set "polling duration", 10
+
 io.sockets.on 'connection', (client)->
   console.log 'Client connected...'
 
