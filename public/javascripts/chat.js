@@ -6,6 +6,8 @@
       message_input = $('#new-message-body'),
       name = prompt('What is your name?');
 
+  message_input.focus();
+
   socket.on('message', function (data) {
     if(data.content) {
       display.append(data.content);
