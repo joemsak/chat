@@ -16,6 +16,7 @@
       });
 
       display.html(html);
+      display.scrollTop(display[0].scrollHeight);
     } else {
       console.log("There is a problem:", data);
     }
