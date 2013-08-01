@@ -1,13 +1,21 @@
 (function(){
-  var socket  = io.connect('http://localhost:8080'),
-      form    = $("form"),
-      display = $('#messages'),
+  var socket   = io.connect('http://localhost:8080'),
+      form     = $("form"),
+      display  = $('#messages'),
+      messages = [],
       message_input = $('#new-message-body');
 
   socket.on('message', function (data) {
     if(data.message) {
-      var html = "<p>" + data.message + "</p>";
-      display.append(html);
+      var html = '';
+
+      messages.push(data.message);
+
+      messages.forEach(function(message){
+        html += "<p>" + message + "</p>";
+      });
+
+      display.html(html);
     } else {
       console.log("There is a problem:", data);
     }
