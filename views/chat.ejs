@@ -1,0 +1,11 @@
+<% layout('layout'); -%>
+<div id="messages">
+</div>
+
+<form method="post" action="/send">
+  <input id="new-message-body" name="message" type="text" />
+  <button>Send</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>

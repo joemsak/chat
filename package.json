@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "socket.io":     "~0.9.16",
+    "express":       "~3.3.4",
+    "ejs":           "~0.8.4",
+    "ejs-locals":    "~1.0.2"
+  }
+}
