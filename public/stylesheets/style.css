@@ -8,6 +8,12 @@
   border-style: solid;
 }
 
+.name {
+  display: inline-block;
+  padding-right: 15px;
+  color: #ccc;
+}
+
 #new-message-body {
   font-size: 18px;
   font-weight: bold;
