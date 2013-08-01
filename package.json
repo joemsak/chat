@@ -1,5 +1,6 @@
 {
   "name": "chattime",
+  "description": "Have a fun chat time with joe!",
   "version": "0.0.1",
   "engines": {
     "node": "0.10.x",
@@ -11,5 +12,9 @@
     "express":       "~3.3.4",
     "ejs":           "~0.8.4",
     "ejs-locals":    "~1.0.2"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/joemsak/chat"
   }
 }
