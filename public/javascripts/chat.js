@@ -3,19 +3,12 @@
       form     = $("form"),
       display  = $('#messages'),
       messages = [],
-      message_input = $('#new-message-body');
+      message_input = $('#new-message-body'),
+      name = prompt('What is your name?');
 
   socket.on('message', function (data) {
-    if(data.message) {
-      var html = '';
-
-      messages.push(data.message);
-
-      messages.forEach(function(message){
-        html += "<p>" + message + "</p>";
-      });
-
-      display.html(html);
+    if(data.content) {
+      display.append(data.content);
       display.scrollTop(display[0].scrollHeight);
     } else {
       console.log("There is a problem:", data);
@@ -29,6 +22,6 @@
     var text = message_input.val();
     message_input.val('');
 
-    socket.emit('send', { message: text });
+    socket.emit('send', { name: name, message: text });
   });
 })(jQuery);

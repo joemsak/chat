@@ -40,7 +40,13 @@ io.sockets.on 'connection', (client)->
   console.log 'Client connected...'
 
   client.on 'send', (data)->
-    io.sockets.emit 'message', { message: data.message }
+    html = "<p>"
+    html +=   "<span class='name'>"
+    html +=     data.name
+    html +=   "</span>"
+    html +=    data.message
+    html += "</p>"
+    io.sockets.emit 'message', { content: html }
 
 ###
  Start the Server
