@@ -36,11 +36,11 @@ app.get '/', (req, res)->
 server = http.createServer app
 io = require('socket.io').listen(server)
 
-io.sockets.on 'connection', (socket)->
+io.sockets.on 'connection', (client)->
   console.log 'Client connected...'
 
-  socket.on 'send', (data)->
-    socket.emit 'message', { message: data.message }
+  client.on 'send', (data)->
+    io.sockets.emit 'message', { message: data.message }
 
 ###
  Start the Server
